@@ -6,12 +6,49 @@
         <title>Convergency</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
         <style> /* CSS File (shortened it here because it wasn't much, maybe we can separate it later, we also need a file.js for the dark mode switch*/
+            :root{
+               /* --light-bg: #f4f4f9; /* Light background color original*/
+                --light-bg: #e2e1e1; /* Light background color */
+                --dark-bg: #3a3939; /* Dark background color */
+                --light-text: #121212; /* Light text color */
+                --dark-text: #e0e0e0; /* Dark text color */
+            }
+            
             body {
                 font-family: 'Inter', sans-serif;
                 margin: 0;
                 padding: 0;
-                background-color: #f4f4f9;
             }
+            body.light-mode {
+             background-color: var(--light-bg); /* Light mode background */
+                color: var(--light-text); /* Light mode text color */
+            }
+
+            body.dark-mode {
+                background-color: var(--dark-bg); /* Dark mode background */
+                color: var(--dark-text); /* Dark mode text color */
+            }
+
+            body.dark-mode th{
+               
+                color: var(--light-text); /* Dark mode text color */
+            }
+            body.light-mode th, body.light-mode td, body.light-mode table {
+    border: 0.5px solid #272727; /* Light mode border color */
+}
+
+body.dark-mode th, body.dark-mode td, body.dark-mode table {
+    border: 1px solid #ddd; /* Dark mode border color */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders collapse properly */
+    margin-top: 20px;
+}
+
+
+
             header {
                 text-align: left;
                 padding: 15px 20px;
@@ -20,7 +57,6 @@
                 margin: 0;
                 padding: 0;
                 display: inline;
-                color: black;
             }
             header img {
                 height: 50px;
@@ -29,7 +65,9 @@
             nav {
                 display: flex;
                 justify-content: center;
-                margin-top: -10px;
+                margin-top: -2%;
+                margin-left: 4%;
+                margin-right: 4%;
             }
             nav a {
                 color: #a3bdff;
@@ -37,7 +75,9 @@
                 text-decoration: none;
                 text-align: center;
                 position: relative;
-                font-size: 18px;
+                font-size: 21px;
+                margin-left: 5%;
+                margin-right: 5%;
             }
             nav a::after {
                 content: '';
@@ -65,27 +105,81 @@
             .about-us, .projects, .events, .team {
                 margin-bottom: 40px;
             }
-            table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            }
+            
             th, td {
                 padding: 8px;
                 text-align: left;
-                border: 1px solid #ddd;
                 max-width: 50px;
             }
             th {
                 background-color: #f2f2f2;
             }
+            .infoText{
+                font-size: 20px;
+            }
+
+            .theme-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+     transition: background-color 0.3s, transform 0.3s, color 0.3s;
+
+
+}
+
+.theme-icon:hover {
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+}
+
+.theme-icon.light-mode {
+    background-color: var(--dark-bg); /* Dark background for light mode */
+    color: var(--light-bg); /* Light color for the icon */
+}
+
+.theme-icon.dark-mode {
+    background-color: var(--light-bg); /* Light background for dark mode */
+    color: var(--dark-bg); /* Dark color for the icon */
+}
+
+.theme-icon span {
+    font-size: 1.5rem; /* Size of the moon icon */
+}
+
+.theme-icon[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 50%;
+    right: 120%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Light mode tooltip adjustments */
+.theme-icon.light-mode[data-tooltip]:hover::after {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
         </style>
     </head>
-    <body>
+    <body class="light-mode">
 
-    <header>
+    <header class="light-mode">
         <!-- Logo image here-->
-        <h1>Convergency</h1>
+        <h1 >Convergency</h1>
     </header>
 
     <nav>
@@ -106,7 +200,7 @@
     <div class="container">
         <section class="about-us">
             <h2>About Us</h2>
-            <p>Convergency is a research group dedicated to using robotics and artificial intelligence to address real-world problems and making 
+            <p class="infoText">Convergency is a research group dedicated to using robotics and artificial intelligence to address real-world problems and making 
                 advanced research accessible to the general public. We aim to speed up adoption and implementation of emerging technologies in 
                 daily lives and democratize understanding of deep tech topics. We're run by students, for students - we move fast, break things,
                 and are willing to take anyone on given the crucial ingredient of passion.</p>
@@ -121,7 +215,7 @@
                     <th>Future</th>
                 </tr>
                 <tr>
-                    <td>Open-source robot for pharmaceutical and warehouse package delivery, capable of learning live and easily controlled with a user-friendly UI.</td>
+                    <td class="infoText">Open-source robot for pharmaceutical and warehouse package delivery, capable of learning live and easily controlled with a user-friendly UI.</td>
                     <td></td>
                     <td></td> 
                 </tr>
@@ -137,7 +231,7 @@
                     <th>Future</th>
                 </tr>
                 <tr>
-                    <td>April 11-12, 2025 <br>Free event targeting K-12 students, explaining applications of Courier and the engineering process and components which it consists of.</td>
+                    <td class="infoText">April 11-12, 2025 <br>Free event targeting K-12 students, explaining applications of Courier and the engineering process and components which it consists of.</td>
                     <td></td>
                     <td></td> 
                 </tr>
@@ -151,5 +245,13 @@
         </section>
     </div>
 
+    <div 
+    class="theme-icon light-mode" 
+    data-tooltip="Switch to Dark Mode" 
+    onclick="toggleTheme()"
+>
+    <span >🌙</span>
+</div>
     </body>
 </html>
+<script src="script.js"></script>
