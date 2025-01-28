@@ -10,11 +10,11 @@
 
         </style>
     </head>
-    <body>
+    <body class="light-mode">
 
-    <header>
+    <header class="light-mode">
         <!-- Logo image here-->
-        <h1>Convergency</h1>
+        <h1 >Convergency</h1>
     </header>
 
     <nav>
@@ -35,7 +35,7 @@
     <div class="container">
         <section class="about-us">
             <h2>About Us</h2>
-            <p>Convergency is a research group dedicated to using robotics and artificial intelligence to address real-world problems and making 
+            <p class="infoText">Convergency is a research group dedicated to using robotics and artificial intelligence to address real-world problems and making 
                 advanced research accessible to the general public. We aim to speed up adoption and implementation of emerging technologies in 
                 daily lives and democratize understanding of deep tech topics. We're run by students, for students - we move fast, break things,
                 and are willing to take anyone on given the crucial ingredient of passion.</p>
@@ -50,7 +50,7 @@
                     <th>Future</th>
                 </tr>
                 <tr>
-                    <td>Open-source robot for pharmaceutical and warehouse package delivery, capable of learning live and easily controlled with a user-friendly UI.</td>
+                    <td class="infoText">Open-source robot for pharmaceutical and warehouse package delivery, capable of learning live and easily controlled with a user-friendly UI.</td>
                     <td></td>
                     <td></td> 
                 </tr>
@@ -66,7 +66,7 @@
                     <th>Future</th>
                 </tr>
                 <tr>
-                    <td>April 11-12, 2025 <br>Free event targeting K-12 students, explaining applications of Courier and the engineering process and components which it consists of.</td>
+                    <td class="infoText">April 11-12, 2025 <br>Free event targeting K-12 students, explaining applications of Courier and the engineering process and components which it consists of.</td>
                     <td></td>
                     <td></td> 
                 </tr>
@@ -80,5 +80,13 @@
         </section>
     </div>
 
+    <div 
+    class="theme-icon light-mode" 
+    data-tooltip="Switch to Dark Mode" 
+    onclick="toggleTheme()"
+>
+    <span >🌙</span>
+</div>
     </body>
 </html>
+<script src="script.js"></script>

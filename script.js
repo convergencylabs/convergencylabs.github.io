@@ -19,12 +19,10 @@ function toggleTheme() {
     themeIcon.classList.toggle('light-mode');
 
     if (body.classList.contains('dark-mode')) {
-        button.textContent = 'Switch to Light Mode';
-        themeIcon.dataset.tooltip = 'Switch to Light Mode';
-        themeIcon.innerHTML = '<span>☀️</span>';
+        themeIcon.innerHTML = '🌞'; // Sun icon for dark mode
+        themeIcon.setAttribute('data-tooltip', 'Switch to Light Mode');
     } else {
-        button.textContent = 'Switch to Dark Mode';
-        themeIcon.dataset.tooltip = 'Switch to Dark Mode';
-        themeIcon.innerHTML = '<span>🌙</span>';
+        themeIcon.innerHTML = '🌙'; // Moon icon for light mode
+        themeIcon.setAttribute('data-tooltip', 'Switch to Dark Mode');
     }
 }
