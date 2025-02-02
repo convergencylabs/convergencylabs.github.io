@@ -4,11 +4,17 @@ function toggleTheme() {
     const cards = document.querySelectorAll('.card');
     const button = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-icon');
+    const table = document.querySelector('table');
+
 
     body.classList.toggle('dark-mode');
     body.classList.toggle('light-mode');
+    
     header.classList.toggle('dark-mode');
     header.classList.toggle('light-mode');
+    
+    table.classList.toggle('dark-mode');
+    table.classList.toggle('light-mode');
 
     cards.forEach(card => {
         card.classList.toggle('dark-mode');

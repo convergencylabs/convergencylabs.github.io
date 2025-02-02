@@ -323,26 +323,26 @@ footer a:hover {
 .light-mode a {
     color: #000;
     text-decoration: none;
-    transition: color 0.3s; /* Smooth color transition */
+    transition: color 0.3s;
 }
 
 .light-mode a:hover {
-    color: #555; /* Changes color on hover */
-    text-decoration: none; /* Underline on hover */
+    color: #555;
+    text-decoration: none;
 }
 
 .light-mode a:hover::after {
-    color: #555; /* Changes color on hover */
-    text-decoration: none; /* Underline on hover */
+    color: #555;
+    text-decoration: none; 
 }
 
 .dark-mode a {
-    color: #fff; /* Example: White for dark mode */
+    color: #fff;
     text-decoration: none;
 }
 
 .dark-mode a:hover {
-    color: #bbb; /* Lighter color on hover */
+    color: #bbb;
 }
 
 .current {
@@ -414,4 +414,22 @@ footer a:hover {
 
 .arrow.right {
     right: 10px;
+}
+
+/* Application List Links */
+.applications {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.applications a {
+    text-decoration: none;   
+    color: var(--primary-color);
+    font-size: 1.2rem;    
+}
+
+.applications a:hover {
+    text-decoration: underline;
+    color: #1c1d54;
 }
