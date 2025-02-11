@@ -68,6 +68,7 @@ td {
     padding: 10px 15px;
     text-align: left; 
     border-bottom: 1px solid #ddd;
+    color: #333;
 
 }
 
@@ -117,15 +118,36 @@ body.dark-mode {
     color: var(--dark-text);
 }
 
-
 header.dark-mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
     font-family: 'Inter', sans-serif;
-    color: var(--dark-text)
+    color: var(--dark-text) /*Opposite of what it should be - intentional */
+}
+
+header.light-mode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-family: 'Inter', sans-serif;
+    color: var(--light-text) /*Opposite of what it should be - intentional */
+}
+
+h1.light-mode {
+    font-family: 'Inter', sans-serif;
+    color: var(--dark-text) /*Opposite of what it should be - intentional */
 }
 
 h1.dark-mode {
     font-family: 'Inter', sans-serif;
-    color: var(--dark-text)
+    color: var(--light-text) /*Opposite of what it should be - intentional */
 }
 
 .logo {
@@ -163,8 +185,10 @@ h1 {
     margin: 3rem 0;
     text-align: center;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--dark-color);
 }
+
+
 
 header {
     display: flex;
@@ -174,12 +198,12 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-header h1 {
+/* header h1 {
     margin: 0;
     padding: 0;
     display: inline;
     color: black;
-}
+} */
 
 header img {
     height: 50px;
